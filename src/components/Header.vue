@@ -8,10 +8,7 @@
                 </template>
                 <v-list>
                     <v-list-item>
-                        <RouterLink to="/">Hello World</RouterLink>
-                    </v-list-item>
-                    <v-list-item>
-                        <RouterLink to="/Home">Home</RouterLink>
+                        <RouterLink to="/">Home</RouterLink>
                     </v-list-item>
                     <v-list-item>
                         <RouterLink to="/Counter">Counter</RouterLink>
