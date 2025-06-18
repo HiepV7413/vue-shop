@@ -5,19 +5,20 @@
                 <!-- Cột 1: Logo và mô tả -->
                 <v-col cols="12" md="4" class="text-left">
                     <div class="logo-section">
-                        <h2 class="logo-text">TRENDZ</h2>
+                        <img src="https://wdttrendz.wpengine.com/wp-content/themes/trendz/assets/images/light-logo.png"
+                            alt="Trendz" class="logo-text">
                     </div>
                     <p class="description-text">
                         Dictum non consectetur a erat nam at mi in nulla posuere pretium nibh ipsum
                         consequat nisl vel tincidunt praesent semper feugiat.
                     </p>
                     <div class="payment-icons">
-                        <v-icon class="payment-icon visa">mdi-credit-card</v-icon>
-                        <v-icon class="payment-icon mastercard">mdi-credit-card</v-icon>
-                        <v-icon class="payment-icon amex">mdi-credit-card</v-icon>
-                        <v-icon class="payment-icon paypal">mdi-credit-card</v-icon>
-                        <v-icon class="payment-icon diners">mdi-credit-card</v-icon>
-                        <v-icon class="payment-icon discover">mdi-credit-card</v-icon>
+                        <img src="@/assets/images/vector.svg" alt="Visa" class="payment-icon" />
+                        <img src="@/assets/images/vector2.svg" alt="Mastercard" class="payment-icon" />
+                        <img src="@/assets/images/vector3.svg" alt="Amex" class="payment-icon" />
+                        <img src="@/assets/images/vector4.svg" alt="Paypal" class="payment-icon" />
+                        <img src="@/assets/images/vector5.svg" alt="Diners" class="payment-icon" />
+                        <img src="@/assets/images/vector6.svg" alt="Discover" class="payment-icon" />
                     </div>
                 </v-col>
 

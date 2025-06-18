@@ -1,5 +1,6 @@
 <template>
-  <HelloWorld />
+  <!-- <HelloWorld /> -->
+  <Home />
 </template>
 
 <script lang="ts" setup>

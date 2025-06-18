@@ -1,20 +1,20 @@
 <template>
-  <v-app>
-    <!-- Thông báo chạy ở đầu trang -->
-    <Header />
-    <v-main style="margin-top: 100px;">
+  <v-app id="app">
+    <Header class="no-margin" />
+    <v-main class="no-margin">
       <router-view />
     </v-main>
-
-    <!-- <AppFooter /> -->
     <Footer />
   </v-app>
 </template>
 
-<script lang="ts" setup>
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
+<style>
+#app {
+  min-height: 100vh;
+}
 
-
-
-</script>
+.no-margin {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+</style>
