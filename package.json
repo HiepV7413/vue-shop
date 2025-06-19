@@ -14,7 +14,9 @@
   "dependencies": {
     "@fontsource/roboto": "5.2.5",
     "@mdi/font": "7.4.47",
+    "swiper": "^11.2.8",
     "vue": "^3.5.13",
+    "vue3-carousel": "^0.16.0",
     "vuetify": "^3.8.1"
   },
   "devDependencies": {

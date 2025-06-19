@@ -13,6 +13,9 @@
                     <v-list-item>
                         <RouterLink to="/Counter">Counter</RouterLink>
                     </v-list-item>
+                    <v-list-item>
+                        <RouterLink to="/demo">Demo</RouterLink>
+                    </v-list-item>
                 </v-list>
             </v-menu>
             <span>|</span>
