@@ -22,6 +22,7 @@ declare module 'vue' {
     Notification: typeof import('./components/Notification.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScrollHeader: typeof import('./components/ScrollHeader.vue')['default']
     SpecialProducts: typeof import('./components/SpecialProducts.vue')['default']
     UniqueDesign: typeof import('./components/UniqueDesign.vue')['default']
   }

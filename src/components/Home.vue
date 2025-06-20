@@ -1,5 +1,5 @@
 <template>
-    <v-main>
+    <v-main class="main-content">
         <!-- Hero Section -->
         <herosection class="no-margin" />
 
@@ -29,5 +29,10 @@ import MediaContent from '@/components/MediaContent.vue'
 .no-margin {
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.main-content {
+    padding-top: 135px;
+    /* Điều chỉnh đúng với chiều cao header-fixed thực tế */
 }
 </style>

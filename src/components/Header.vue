@@ -1,7 +1,7 @@
 <template>
-    <div class="header">
-        <MarqueeNotification class="topbar"></MarqueeNotification>
-        <v-app-bar :elevation="2" class="navbar" :class="{ 'scroll-navbar': position > 40 }">
+    <div class="header-fixed">
+        <MarqueeNotification class="topbar" />
+        <v-app-bar :elevation="2" class="navbar">
             <v-menu offset-y open-on-hover>
                 <template #activator="{ props }">
                     <v-btn v-bind="props" text>Home</v-btn>
@@ -42,7 +42,7 @@
                 </template>
                 <v-list>
                     <v-list-item>
-                        <RouterLink to="/about">Abuot</RouterLink>
+                        <RouterLink to="/about">About</RouterLink>
                     </v-list-item>
                     <v-list-item>
                         <RouterLink to="/about/history">We History</RouterLink>
@@ -98,7 +98,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref } from "vue";
 import MarqueeNotification from "@/components/MarqueeNotification.vue";
 
 const currencies = [
@@ -114,35 +114,27 @@ const currencies = [
     "KRW, ₩",
 ];
 const selectedCurrency = ref(currencies[0]);
-const position = ref<number>(0);
-
-onMounted(() => {
-    const updateScroll = () => {
-        position.value = window.scrollY;
-    };
-
-    updateScroll();
-
-    window.addEventListener("scroll", updateScroll);
-
-    onUnmounted(() => {
-        window.removeEventListener("scroll", updateScroll);
-    });
-});
 </script>
 
 <style lang="scss">
-.navbar {
-    position: fixed !important;
+.header-fixed {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
-    transform: translateY(40px) !important;
-    transition: transform 0.5s ease;
+    z-index: 100;
+    height: 95px;
 }
 
-.scroll-navbar {
-    transform: translateY(0) !important;
+.navbar {
+    position: static !important;
+    box-shadow: none;
+    height: 95px;
+    min-height: 95px;
+    max-height: 95px;
+}
+
+.topbar {
+    margin-bottom: 0;
 }
 </style>

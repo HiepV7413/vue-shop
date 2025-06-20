@@ -1,12 +1,35 @@
 <template>
   <v-app id="app">
-    <Header class="no-margin" />
+    <transition name="fade-header" mode="out-in">
+      <Header v-if="!showScrollHeader" class="no-margin" key="main-header" />
+      <ScrollHeader v-else class="header-fixed" key="scroll-header" />
+    </transition>
     <v-main class="no-margin">
       <router-view />
     </v-main>
     <Footer />
   </v-app>
 </template>
+
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from "vue";
+import Header from "@/components/Header.vue";
+import ScrollHeader from "@/components/ScrollHeader.vue";
+
+const showScrollHeader = ref(false);
+
+function handleScroll() {
+  showScrollHeader.value = window.scrollY > 40;
+}
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
+</script>
 
 <style>
 #app {
@@ -16,5 +39,15 @@
 .no-margin {
   margin: 0 !important;
   padding: 0 !important;
+}
+
+.fade-header-enter-active,
+.fade-header-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-header-enter-from,
+.fade-header-leave-to {
+  opacity: 0;
 }
 </style>
