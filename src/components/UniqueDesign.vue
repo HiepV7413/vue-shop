@@ -18,7 +18,7 @@
                         @mouseleave="hoveredProductId = null">
                         <div class="image-wrapper">
                             <div class="image-container">
-                                <v-img :src="product.image" :alt="product.name" height="500" cover>
+                                <v-img :src="product.image" :alt="product.name" height="636" width="539" cover>
                                     <template #placeholder>
                                         <div class="d-flex align-center justify-center fill-height">
                                             <v-progress-circular color="grey-lighten-4" indeterminate />
@@ -75,7 +75,7 @@ const products = ref<Product[]>([
 ])
 </script>
 
-<style scoped>
+<style lang="scss">
 .new-collections-section {
     background: linear-gradient(135deg, rgba(248, 248, 248, 0) 0%, rgba(240, 240, 240, 0) 0%);
 }
@@ -85,6 +85,8 @@ const products = ref<Product[]>([
     background: transparent;
     border-radius: 0;
     transition: transform 0.3s;
+    max-width: 539px;
+    margin: 0 auto;
 }
 
 .product-card:hover {
@@ -94,15 +96,33 @@ const products = ref<Product[]>([
 .image-wrapper {
     position: relative;
     overflow: hidden;
+    width: 100%;
+    height: 636px;
+    border-radius: 8px;
 }
 
 .image-container {
-    transition: transform 0.4s ease;
-    will-change: transform;
-}
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
 
-.product-card:hover .image-container {
-    transform: scale(1.2);
+    .v-img {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .v-img__img {
+        transition: all 0.4s ease;
+        transform-origin: center center;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+
+    &:hover .v-img__img {
+        transform: scale(1.15) rotate(3deg);
+    }
 }
 
 .overlay-content {
@@ -154,5 +174,30 @@ const products = ref<Product[]>([
 .shop-btn:hover {
     color: #f0f0f0 !important;
     transform: translateX(5px);
+}
+
+// Responsive adjustments
+@media (max-width: 960px) {
+    .image-wrapper {
+        height: 500px;
+    }
+
+    .product-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .image-wrapper {
+        height: 400px;
+    }
+
+    .collection-title {
+        font-size: 1.5rem;
+    }
+
+    .collection-description {
+        font-size: 0.9rem;
+    }
 }
 </style>

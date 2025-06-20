@@ -30,20 +30,20 @@
                 :touch-drag="true" :transition="500">
                 <slide v-for="product in filteredProducts" :key="`${product.id}-${activeCollection}`">
                     <v-card class="product-card mx-2" elevation="0" max-width="300"
-                        @mouseenter="hoveredProductId = product.id" @mouseleave="hoveredProductId = null">
+                        @mouseenter="hoveredProductId = product.id" @mouseleave="hoveredProductId = null"
+                        :class="{ 'hovered-info': hoveredProductId === product.id }">
                         <div class="sale-badge" v-if="product.onSale">
-                            <v-chip color="black" text-color="white" size="small" class="font-weight-bold">Sale</v-chip>
+                            <v-chip color="black" text-color="white" size="lag" class="font-weight-bold">Sale</v-chip>
                         </div>
                         <v-img :src="hoveredProductId === product.id ? product.hoverImage : product.image"
-                            :alt="product.name" height="400" cover>
+                            :alt="product.name" height="540px" width="420px" cover>
                             <template #placeholder>
                                 <div class="d-flex align-center justify-center fill-height">
                                     <v-progress-circular color="grey-lighten-4" indeterminate />
                                 </div>
                             </template>
                         </v-img>
-                        <v-card-text class="text-center pa-4 transition-border"
-                            :class="{ 'hovered-info': hoveredProductId === product.id }">
+                        <v-card-text class="text-center pa-4 transition-border">
                             <h3 class="text-h6 font-weight-medium mb-2">{{ product.name }}</h3>
                             <div class="price-section">
                                 <span class="text-body-2 text-grey-darken-1">Starts at</span>
@@ -222,8 +222,7 @@ const filteredProducts = computed(() =>
 }
 
 .hovered-info {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border: 1px solid #D1C2BB;
 }
 
 .select-options-placeholder {
