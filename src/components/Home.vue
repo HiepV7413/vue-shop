@@ -32,7 +32,7 @@ import MediaContent from '@/components/MediaContent.vue'
 }
 
 .main-content {
-    padding-top: 135px;
+    padding-top: 118px;
     /* Điều chỉnh đúng với chiều cao header-fixed thực tế */
 }
 </style>

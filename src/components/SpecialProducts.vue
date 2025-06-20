@@ -30,7 +30,7 @@
                 type: 'loop',
                 perPage: 4,
                 perMove: 1,
-                gap: 100,
+                gap: 1,
             }" aria-label="Our Products" class="cursor-grab">
 
                 <SplideSlide v-for="(product, index) in filteredProducts" :key="index">
@@ -43,7 +43,7 @@
                                     class="font-weight-bold">Sale</v-chip>
                             </div>
                             <v-img :src="hoveredProductId === product.id ? product.hoverImage : product.image"
-                                :alt="product.name" height="540px" width="420px" cover>
+                                :alt="product.name" height="540px" width="417px" cover>
                                 <template #placeholder>
                                     <div class="d-flex align-center justify-center fill-height">
                                         <v-progress-circular color="grey-lighten-4" indeterminate />
@@ -71,13 +71,6 @@
                     </div>
                 </SplideSlide>
             </Splide>
-
-            <!-- <carousel :key="activeCollection" :items-to-show="3" :wrap-around="true" :loop="true" :mouse-drag="true"
-                :touch-drag="true" :transition="500">
-                <slide v-for="product in filteredProducts" :key="`${product.id}-${activeCollection}`">
-                    
-                </slide>
-            </carousel> -->
         </v-container>
     </section>
 </template>
@@ -85,8 +78,7 @@
 <script setup lang="ts">
 import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import { ref, computed } from 'vue'
-import 'vue3-carousel/dist/carousel.css'
-// import { Carousel, Slide } from 'vue3-carousel'
+import "@splidejs/vue-splide/css"
 
 interface Product {
     id: number

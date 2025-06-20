@@ -5,9 +5,9 @@
             <v-row>
                 <v-col cols="12" class="text-center">
                     <p class="text-overline font-weight-bold mb-2 text-grey-darken-1">
-                        SPECIAL PRODUCTS
+                        Unique Design
                     </p>
-                    <h2 class="text-h4 font-weight-bold mb-8">New Collections</h2>
+                    <h2 class="text-h4 font-weight-bold mb-8">Trending Products</h2>
                 </v-col>
             </v-row>
 

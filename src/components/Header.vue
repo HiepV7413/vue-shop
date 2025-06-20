@@ -123,18 +123,39 @@ const selectedCurrency = ref(currencies[0]);
     left: 0;
     right: 0;
     z-index: 100;
-    height: 95px;
 }
 
 .navbar {
     position: static !important;
     box-shadow: none;
-    height: 95px;
-    min-height: 95px;
-    max-height: 95px;
+    font-size: 1.2rem;
+    min-height: 60px !important; // Tăng chiều cao navbar lên 120px
+    height: 75px !important; // Đảm bảo chiều cao cố định
+    align-items: center;
 }
 
-.topbar {
-    margin-bottom: 0;
+.transparent-navbar {
+    background: rgba(255, 255, 255, 0.4) !important;
+}
+
+.v-btn {
+    font-size: 1.1rem !important;
+    padding: 0 28px !important;
+    height: 60px !important; // Tăng chiều cao nút cho phù hợp navbar lớn hơn
+    display: flex;
+    align-items: center;
+}
+
+.v-list-item {
+    font-size: 1.1rem !important;
+    min-height: 48px !important;
+}
+
+h2,
+.logo-text {
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    margin: 0 24px;
 }
 </style>

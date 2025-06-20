@@ -19,7 +19,7 @@ import ScrollHeader from "@/components/ScrollHeader.vue";
 const showScrollHeader = ref(false);
 
 function handleScroll() {
-  showScrollHeader.value = window.scrollY > 40;
+  showScrollHeader.value = window.scrollY > 0;
 }
 
 onMounted(() => {
