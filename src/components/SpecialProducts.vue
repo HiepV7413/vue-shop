@@ -26,50 +26,67 @@
             </v-row>
 
             <!-- Carousel -->
-            <carousel :key="activeCollection" :items-to-show="3" :wrap-around="true" :loop="true" :mouse-drag="true"
+            <Splide :options="{
+                type: 'loop',
+                perPage: 4,
+                perMove: 1,
+                gap: 100,
+            }" aria-label="Our Products" class="cursor-grab">
+
+                <SplideSlide v-for="(product, index) in filteredProducts" :key="index">
+                    <div>
+                        <v-card class="product-card mx-2" elevation="0" max-width="300"
+                            @mouseenter="hoveredProductId = product.id" @mouseleave="hoveredProductId = null"
+                            :class="{ 'hovered-info': hoveredProductId === product.id }">
+                            <div class="sale-badge" v-if="product.onSale">
+                                <v-chip color="black" text-color="white" size="lag"
+                                    class="font-weight-bold">Sale</v-chip>
+                            </div>
+                            <v-img :src="hoveredProductId === product.id ? product.hoverImage : product.image"
+                                :alt="product.name" height="540px" width="420px" cover>
+                                <template #placeholder>
+                                    <div class="d-flex align-center justify-center fill-height">
+                                        <v-progress-circular color="grey-lighten-4" indeterminate />
+                                    </div>
+                                </template>
+                            </v-img>
+                            <v-card-text class="text-center pa-4 transition-border">
+                                <h3 class="text-h6 font-weight-medium mb-2">{{ product.name }}</h3>
+                                <div class="price-section">
+                                    <span class="text-body-2 text-grey-darken-1">Starts at</span>
+                                    <span v-if="product.originalPrice"
+                                        class="text-decoration-line-through text-grey ml-2">
+                                        € {{ product.originalPrice }}
+                                    </span>
+                                    <span class="font-weight-bold ml-2">€ {{ product.currentPrice }}</span>
+                                </div>
+                                <div class="select-options-placeholder mt-4"
+                                    :class="{ hidden: hoveredProductId !== product.id }">
+                                    <v-btn variant="text" class="text-decoration-underline font-weight-bold">
+                                        Select Options <v-icon end>mdi-arrow-right</v-icon>
+                                    </v-btn>
+                                </div>
+                            </v-card-text>
+                        </v-card>
+                    </div>
+                </SplideSlide>
+            </Splide>
+
+            <!-- <carousel :key="activeCollection" :items-to-show="3" :wrap-around="true" :loop="true" :mouse-drag="true"
                 :touch-drag="true" :transition="500">
                 <slide v-for="product in filteredProducts" :key="`${product.id}-${activeCollection}`">
-                    <v-card class="product-card mx-2" elevation="0" max-width="300"
-                        @mouseenter="hoveredProductId = product.id" @mouseleave="hoveredProductId = null"
-                        :class="{ 'hovered-info': hoveredProductId === product.id }">
-                        <div class="sale-badge" v-if="product.onSale">
-                            <v-chip color="black" text-color="white" size="lag" class="font-weight-bold">Sale</v-chip>
-                        </div>
-                        <v-img :src="hoveredProductId === product.id ? product.hoverImage : product.image"
-                            :alt="product.name" height="540px" width="420px" cover>
-                            <template #placeholder>
-                                <div class="d-flex align-center justify-center fill-height">
-                                    <v-progress-circular color="grey-lighten-4" indeterminate />
-                                </div>
-                            </template>
-                        </v-img>
-                        <v-card-text class="text-center pa-4 transition-border">
-                            <h3 class="text-h6 font-weight-medium mb-2">{{ product.name }}</h3>
-                            <div class="price-section">
-                                <span class="text-body-2 text-grey-darken-1">Starts at</span>
-                                <span v-if="product.originalPrice" class="text-decoration-line-through text-grey ml-2">
-                                    € {{ product.originalPrice }}
-                                </span>
-                                <span class="font-weight-bold ml-2">€ {{ product.currentPrice }}</span>
-                            </div>
-                            <div class="select-options-placeholder mt-4"
-                                :class="{ hidden: hoveredProductId !== product.id }">
-                                <v-btn variant="text" class="text-decoration-underline font-weight-bold">
-                                    Select Options <v-icon end>mdi-arrow-right</v-icon>
-                                </v-btn>
-                            </div>
-                        </v-card-text>
-                    </v-card>
+                    
                 </slide>
-            </carousel>
+            </carousel> -->
         </v-container>
     </section>
 </template>
 
 <script setup lang="ts">
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
 import { ref, computed } from 'vue'
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide } from 'vue3-carousel'
+// import { Carousel, Slide } from 'vue3-carousel'
 
 interface Product {
     id: number
