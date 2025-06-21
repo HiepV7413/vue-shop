@@ -1,9 +1,8 @@
 <template>
     <v-main class="main-content">
-        <!-- Hero Section -->
+
         <herosection class="no-margin" />
 
-        <!-- Know Us Section -->
         <know-us-section />
 
         <special-products class="no-margin" />
@@ -13,6 +12,8 @@
         <discover-new-style />
 
         <media-content />
+
+        <season-outfit />
     </v-main>
 </template>
 
@@ -23,6 +24,7 @@ import SpecialProducts from '@/components/SpecialProducts.vue'
 import UniqueDesign from '@/components/UniqueDesign.vue'
 import DiscoverNewStyle from '@/components/DiscoverNewStyle.vue'
 import MediaContent from '@/components/MediaContent.vue'
+import SeasonOutfit from '@/components/SeasonOutfit.vue'
 </script>
 
 <style lang="scss" scoped>

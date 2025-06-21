@@ -1,5 +1,5 @@
 <template>
-    <v-main>
+    <v-main class="main-content">
         <!-- Hero Section -->
         <v-carousel>
             <v-carousel-item v-for="(slide, i) in slides" :key="i">
@@ -716,5 +716,9 @@ function onHeroCta() {
     height: 100%;
     z-index: 2;
     background: rgba(0, 0, 0, 0.5);
+}
+
+.main-content {
+    padding-top: 118px;
 }
 </style>

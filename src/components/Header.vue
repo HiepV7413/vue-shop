@@ -116,7 +116,7 @@ const currencies = [
 const selectedCurrency = ref(currencies[0]);
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .header-fixed {
     position: fixed;
     top: 0;

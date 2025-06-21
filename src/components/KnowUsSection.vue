@@ -15,10 +15,11 @@
                         duis at tellus pulvinar proin gravida hendrerit lectus a non curabitur gravida arcu ac
                         tortor.
                     </p>
-                    <v-btn size="large" color="black" variant="flat" class="text-uppercase font-weight-medium px-8"
-                        @click="onKnowUsCta">
+                    <v-btn size="large" color="black" variant="flat"
+                        class="text-uppercase font-weight-medium px-8 d-inline-block mx-auto" @click="onKnowUsCta">
                         Shop Now
                     </v-btn>
+
                 </v-col>
             </v-row>
         </v-container>

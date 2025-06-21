@@ -39,6 +39,7 @@ onUnmounted(() => {
 .no-margin {
   margin: 0 !important;
   padding: 0 !important;
+
 }
 
 .fade-header-enter-active,

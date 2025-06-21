@@ -23,6 +23,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollHeader: typeof import('./components/ScrollHeader.vue')['default']
+    SeasonOutfit: typeof import('./components/SeasonOutfit.vue')['default']
     SpecialProducts: typeof import('./components/SpecialProducts.vue')['default']
     UniqueDesign: typeof import('./components/UniqueDesign.vue')['default']
   }

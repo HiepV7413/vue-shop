@@ -1,5 +1,5 @@
 <template>
-    <section class="new-collections-section py-12 bg-grey-lighten-5">
+    <section class="discover-new-style py-12 bg-grey-lighten-5">
         <v-container>
             <!-- Header -->
             <v-row>
@@ -196,7 +196,7 @@ const filteredProducts = computed(() =>
 
 
 <style scoped>
-.new-collections-section {
+.discover-new-style {
     background: linear-gradient(135deg, rgba(248, 248, 248, 0.9) 0%, rgba(240, 240, 240, 0.9) 100%);
 }
 
