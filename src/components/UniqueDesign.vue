@@ -1,5 +1,5 @@
 <template>
-    <section class="new-collections-section py-12 bg-grey-lighten-5">
+    <section class="unique-design py-12 bg-grey-lighten-5">
         <v-container>
             <!-- Header -->
             <v-row>
@@ -76,7 +76,7 @@ const products = ref<Product[]>([
 </script>
 
 <style lang="scss">
-.new-collections-section {
+.unique-design {
     background: linear-gradient(135deg, rgba(248, 248, 248, 0) 0%, rgba(240, 240, 240, 0) 0%);
 }
 

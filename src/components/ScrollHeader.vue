@@ -1,5 +1,5 @@
 <template>
-    <div class="header-fixed">
+    <div class="scroll-header">
         <v-app-bar :elevation="0" class="navbar transparent-navbar">
             <v-menu offset-y open-on-hover>
                 <template #activator="{ props }">
@@ -115,7 +115,7 @@ const selectedCurrency = ref(currencies[0]);
 </script>
 
 <style lang="scss" scoped>
-.header-fixed {
+.scroll-header {
     position: fixed;
     top: 0;
     left: 0;

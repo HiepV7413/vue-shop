@@ -14,6 +14,8 @@
         <media-content />
 
         <season-outfit />
+
+        <instagram />
     </v-main>
 </template>
 
@@ -25,6 +27,7 @@ import UniqueDesign from '@/components/UniqueDesign.vue'
 import DiscoverNewStyle from '@/components/DiscoverNewStyle.vue'
 import MediaContent from '@/components/MediaContent.vue'
 import SeasonOutfit from '@/components/SeasonOutfit.vue'
+import Instagram from '@/components/Instagram.vue'
 </script>
 
 <style lang="scss" scoped>

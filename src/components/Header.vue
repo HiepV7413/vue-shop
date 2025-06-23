@@ -16,6 +16,9 @@
                     <v-list-item>
                         <RouterLink to="/demo">Demo</RouterLink>
                     </v-list-item>
+                    <v-list-item>
+                        <RouterLink to="/Faq">Faq</RouterLink>
+                    </v-list-item>
                 </v-list>
             </v-menu>
             <span>|</span>

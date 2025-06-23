@@ -16,6 +16,7 @@ declare module 'vue' {
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     HeroSection: typeof import('./components/HeroSection.vue')['default']
     Home: typeof import('./components/Home.vue')['default']
+    Instagram: typeof import('./components/Instagram.vue')['default']
     KnowUsSection: typeof import('./components/KnowUsSection.vue')['default']
     MarqueeNotification: typeof import('./components/MarqueeNotification.vue')['default']
     MediaContent: typeof import('./components/MediaContent.vue')['default']

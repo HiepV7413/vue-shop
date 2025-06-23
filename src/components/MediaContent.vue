@@ -1,14 +1,26 @@
 <template>
-    <section class="new-collections-section py-12 bg-grey-lighten-5">
+    <section class="media-content py-12 bg-grey-lighten-5">
         <v-container fluid class="px-6">
-            <!-- Carousel -->
-            <carousel :items-to-show="4.2" :wrap-around="true" :loop="true" :mouse-drag="true" :touch-drag="true"
-                :transition="500" :snapAlign="'start'" class="custom-carousel">
-                <slide v-for="product in products" :key="product.id" class="carousel-slide">
-                    <v-card class="product-card" elevation="0" max-width="200"
+            <!-- Splide Carousel -->
+            <Splide :options="{
+                type: 'loop',
+                perPage: 4,
+                perMove: 1,
+                gap: 15,
+                drag: true,
+                arrows: true,
+                pagination: false,
+                breakpoints: {
+                    1200: { perPage: 3 },
+                    900: { perPage: 2 },
+                    600: { perPage: 1 }
+                }
+            }" class="custom-carousel">
+                <SplideSlide v-for="product in products" :key="product.id" class="carousel-slide">
+                    <v-card class="product-card" elevation="0" max-width="225"
                         @mouseenter="hoveredProductId = product.id" @mouseleave="hoveredProductId = null"
                         :class="{ 'hovered': hoveredProductId === product.id }">
-                        <v-img :src="product.image" :alt="product.name" height="200px" width="200px" cover>
+                        <v-img :src="product.image" height="225px" width="225px" cover>
                             <template #placeholder>
                                 <div class="d-flex align-center justify-center fill-height">
                                     <v-progress-circular color="grey-lighten-4" indeterminate />
@@ -16,20 +28,19 @@
                             </template>
                         </v-img>
                     </v-card>
-                </slide>
-            </carousel>
+                </SplideSlide>
+            </Splide>
         </v-container>
     </section>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide } from 'vue3-carousel'
+import { ref } from 'vue'
+import { Splide, SplideSlide } from '@splidejs/vue-splide'
+import '@splidejs/vue-splide/css'
 
 interface Product {
     id: number
-    name: string
     image: string
 }
 
@@ -38,44 +49,57 @@ const hoveredProductId = ref<number | null>(null)
 const products = ref<Product[]>([
     {
         id: 1,
-        name: 'Urbane Sleeveless Dress',
         image: new URL('@/assets/images/vector8.svg', import.meta.url).href
     },
     {
         id: 2,
-        name: 'Satin Sleeveless Dress',
         image: new URL('@/assets/images/vector9.svg', import.meta.url).href
     },
     {
         id: 3,
-        name: 'Flossy Classic Dress',
         image: new URL('@/assets/images/vector10.svg', import.meta.url).href
     },
     {
         id: 4,
-        name: 'Swag Long Dress',
+        image: new URL('@/assets/images/vector11.svg', import.meta.url).href
+    },
+    {
+        id: 5,
+        image: new URL('@/assets/images/vector8.svg', import.meta.url).href
+    },
+    {
+        id: 6,
+        image: new URL('@/assets/images/vector9.svg', import.meta.url).href
+    },
+    {
+        id: 7,
+        image: new URL('@/assets/images/vector10.svg', import.meta.url).href
+    },
+    {
+        id: 8,
         image: new URL('@/assets/images/vector11.svg', import.meta.url).href
     }
 ])
 </script>
 
 <style scoped>
-.new-collections-section {
+.media-content {
     background: linear-gradient(135deg, rgba(248, 248, 248, 0) 0%, rgba(240, 240, 240, 0) 100%);
     overflow: hidden;
-    /* Ngăn tràn ra ngoài */
 }
 
-/* Custom carousel styles */
 .custom-carousel {
     width: 100%;
     overflow: hidden;
-    /* Quan trọng */
+}
+
+/* Ẩn mũi tên chuyển trang của Splide */
+:deep(.splide__arrow) {
+    display: none !important;
 }
 
 .carousel-slide {
     padding-right: 15px;
-    /* Giảm từ 20px xuống 15px */
     box-sizing: border-box;
 }
 
@@ -86,7 +110,7 @@ const products = ref<Product[]>([
             rgba(240, 240, 240, 0.8) 100%);
     transition: background 0.3s ease;
     box-shadow: none !important;
-    width: 100%;
+    width: 225px;
     margin: 0 auto;
 }
 
@@ -99,33 +123,10 @@ const products = ref<Product[]>([
 .v-img {
     transition: none !important;
     transform: none !important;
+    height: 225px !important;
+    width: 225px !important;
 }
 
-/* Override carousel default styles - KEY FIX */
-:deep(.carousel__viewport) {
-    width: 100%;
-    overflow: hidden;
-    /* Quan trọng để tránh tràn */
-}
-
-:deep(.carousel__track) {
-    align-items: flex-start;
-}
-
-:deep(.carousel__slide) {
-    flex-shrink: 0;
-    width: calc(25% - 15px);
-    /* Giảm từ 15px xuống 12px */
-    margin-right: 7px;
-    /* Giảm từ 20px xuống 15px */
-    box-sizing: border-box;
-}
-
-:deep(.carousel__slide:last-child) {
-    margin-right: 0;
-}
-
-/* Đảm bảo container không bị tràn */
 .v-container {
     max-width: 1400px !important;
     overflow: hidden;
