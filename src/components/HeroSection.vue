@@ -1,23 +1,45 @@
 <template>
     <section class="hero-section">
-        <Splide :options="splideOptions" @splide:mounted="onSplideReady">
-            <SplideSlide v-for="(slide, i) in slides" :key="i">
-                <div class="slide-wrapper">
-                    <div class="slide-container" :style="{ backgroundImage: `url(${slide.img})` }">
-                        <div class="hero-overlay">
-                            <div class="hero-content">
-                                <p class="subtitle">{{ slide.subtitle }}</p>
-                                <h1 class="title">{{ slide.title }}</h1>
-                                <p class="description">{{ slide.desc }}</p>
-                                <button class="cta-button" @click="onHeroCta(slide)">
-                                    {{ slide.ctaText }}
-                                </button>
+        <Splide :options="splideOptions" :has-track="false" @splide:mounted="onSplideReady">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide" v-for="(slide, i) in slides" :key="i">
+                        <div class="slide-wrapper">
+                            <div class="slide-container" :style="{ backgroundImage: `url(${slide.img})` }">
+                                <div class="hero-overlay">
+                                    <div class="hero-content">
+                                        <p class="subtitle">{{ slide.subtitle }}</p>
+                                        <h1 class="title">{{ slide.title }}</h1>
+                                        <p class="description">{{ slide.desc }}</p>
+                                        <button class="cta-button" @click="onHeroCta(slide)">
+                                            {{ slide.ctaText }}
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="splide__arrows">
+                <div class="splide__arrow splide__arrow--prev" @click="splideInstance?.value?.go('<')">
+                    <div class="position-relative btn-left d-flex align-center px-1 cursor-pointer">
+                        <img class="btn-left-icon" src="@/assets/images/home/vector14.svg" alt="Previous" width="50"
+                            height="50" />
+                        <div class="overlay"></div>
                     </div>
                 </div>
-            </SplideSlide>
 
+
+                <div class="splide__arrow splide__arrow--next" @click="splideInstance?.value?.go('>')">
+                    <div class="position-relative btn-right d-flex align-center px-1 cursor-pointer">
+                        <img class="btn-right-icon" src="@/assets/images/home/vector15.svg" alt="Previous" width="50"
+                            height="50" />
+                        <div class="overlay"></div>
+                    </div>
+                </div>
+            </div>
         </Splide>
     </section>
 </template>
@@ -25,8 +47,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Splide, SplideSlide } from '@splidejs/vue-splide'
+import { Splide } from '@splidejs/vue-splide'
 import '@splidejs/vue-splide/css'
+
+const splideInstance = ref<any>(null);
 
 interface HeroSlide {
     img: string
@@ -38,21 +62,21 @@ interface HeroSlide {
 
 const slides = ref<HeroSlide[]>([
     {
-        img: new URL('@/assets/images/Home-7-slider-1.webp', import.meta.url).href,
+        img: new URL('@/assets/images/home/Home-7-slider-1.webp', import.meta.url).href,
         subtitle: 'Large Brand Collection',
         title: 'Trendy Designs',
         desc: 'Egestas integer eget aliquet nibh praesent tristique magna sit odio facilisis',
         ctaText: 'SHOP NOW',
     },
     {
-        img: new URL('@/assets/images/Home-7-slider-2.webp', import.meta.url).href,
+        img: new URL('@/assets/images/home/Home-7-slider-2.webp', import.meta.url).href,
         subtitle: 'Get 50% Flat Off',
         title: 'Best Designs',
         desc: 'Integer eget aliquet nibh praesent tristique magna sit sed velit dignissim',
         ctaText: 'SHOP NOW',
     },
     {
-        img: new URL('@/assets/images/Home-7-slider-3.webp', import.meta.url).href,
+        img: new URL('@/assets/images/home/Home-7-slider-3.webp', import.meta.url).href,
         subtitle: 'Best Offers For All Designs',
         title: 'Modern Outfits',
         desc: 'Volutpat maecenas volutpat blandit aliquam etiamipsum suspendisse',
@@ -76,7 +100,7 @@ const splideOptions = {
 }
 
 function onSplideReady(splide: any) {
-    console.log('Splide is ready:', splide)
+    splideInstance.value = splide;
 }
 
 function onHeroCta(slide: HeroSlide) {
@@ -87,6 +111,41 @@ function onHeroCta(slide: HeroSlide) {
 
 
 <style scoped lang="scss">
+.btn-right,
+.btn-left {
+    &:hover .overlay {
+        height: 100%;
+        width: 100%;
+    }
+
+    .btn-right-icon,
+    .btn-left-icon {
+        position: relative;
+        z-index: 2;
+    }
+
+    .overlay {
+        position: absolute;
+        background-color: #ccc;
+        width: 40%;
+        height: 50%;
+        z-index: 1;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.btn-right {
+    .overlay {
+        left: 0;
+    }
+}
+
+.btn-left {
+    .overlay {
+        right: 0;
+    }
+}
+
 .hero-section {
     position: relative;
     overflow: hidden;
@@ -167,17 +226,13 @@ function onHeroCta(slide: HeroSlide) {
 
 /* Arrow buttons giống ảnh */
 :deep(.splide__arrow) {
-    background: #e6e9e2 !important;
-    width: 2rem;
-    height: 2rem;
+    background: transparent !important;
+    width: 3rem;
+    height: 3rem;
     border-radius: 2px;
 
     svg {
         fill: #000;
-    }
-
-    &:hover {
-        background: #dcdcdc !important;
     }
 }
 

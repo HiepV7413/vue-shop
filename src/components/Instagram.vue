@@ -59,12 +59,12 @@ import "@splidejs/vue-splide/css";
 
 interface Product { id: number; image: string; }
 const products = ref<Product[]>([
-    { id: 1, image: new URL('@/assets/images/Home-3-insta-1.webp', import.meta.url).href },
-    { id: 2, image: new URL('@/assets/images/Home-3-insta-2.webp', import.meta.url).href },
-    { id: 3, image: new URL('@/assets/images/Home-3-insta-3.webp', import.meta.url).href },
-    { id: 4, image: new URL('@/assets/images/Home-3-insta-4.webp', import.meta.url).href },
-    { id: 5, image: new URL('@/assets/images/Home-3-insta-5.webp', import.meta.url).href },
-    { id: 6, image: new URL('@/assets/images/Home-3-insta-6.webp', import.meta.url).href },
+    { id: 1, image: new URL('@/assets/images/home/Home-3-insta-1.webp', import.meta.url).href },
+    { id: 2, image: new URL('@/assets/images/home/Home-3-insta-2.webp', import.meta.url).href },
+    { id: 3, image: new URL('@/assets/images/home/Home-3-insta-3.webp', import.meta.url).href },
+    { id: 4, image: new URL('@/assets/images/home/Home-3-insta-4.webp', import.meta.url).href },
+    { id: 5, image: new URL('@/assets/images/home/Home-3-insta-5.webp', import.meta.url).href },
+    { id: 6, image: new URL('@/assets/images/home/Home-3-insta-6.webp', import.meta.url).href },
 ]);
 const instagramLogo = new URL(
     '@/assets/images/instagram-svgrepo-com.svg',

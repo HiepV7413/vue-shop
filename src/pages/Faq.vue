@@ -17,10 +17,12 @@
             </v-breadcrumbs>
         </div>
 
-        <!-- Title -->
-        <h2 class="text-center text-h3 font-weight-bold mb-8">
-            Frequently Asked Question
-        </h2>
+        <!-- Title with animated underline -->
+        <div class="title-container">
+            <h2 class="text-center text-h3 font-weight-bold mb-8 animated-title">
+                Frequently Asked Question
+            </h2>
+        </div>
 
         <!-- Accordion FAQ List -->
         <v-expansion-panels variant="accordion" class="faq-panels">
@@ -78,25 +80,54 @@ export default {
 <style scoped>
 .faq {
     text-align: center;
-    padding-top: 130px;
+    padding-top: 140px;
+    padding-bottom: 100px;
     max-width: 900px;
 }
 
-h2 {
+.title-container {
     position: relative;
-    color: #333;
+    display: inline-block;
     margin-bottom: 40px;
 }
 
-h2::after {
-    content: "";
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, #d4c5a0, #c4b590);
-    display: block;
-    margin: 12px auto 0;
+.animated-title {
+    position: relative;
+    color: #333;
+    display: inline-block;
+    padding: 8px 16px;
+    z-index: 1;
+}
+
+/* Animated background behind text */
+.animated-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #d4c5a0, #c4b590, #d4c5a0);
+    animation: growShrink 3s ease-in-out infinite;
+    z-index: -1;
     border-radius: 2px;
 }
+
+@keyframes growShrink {
+    0% {
+        height: 2px;
+    }
+
+    50% {
+        height: 30px;
+    }
+
+    100% {
+        height: 2px;
+    }
+}
+
+
 
 .breadcrumb-item {
     color: #666;

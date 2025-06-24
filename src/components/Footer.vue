@@ -1,9 +1,9 @@
 <template>
     <v-footer flat class="footer-bg">
-        <v-container>
+        <v-container class="custom-container">
             <v-row align="start" justify="space-between">
                 <!-- Cột 1: Logo và mô tả -->
-                <v-col cols="12" md="4" class="text-left">
+                <v-col cols="12" md="3" class="text-left">
                     <div class="logo-section">
                         <img src="https://wdttrendz.wpengine.com/wp-content/themes/trendz/assets/images/light-logo.png"
                             alt="Trendz" class="logo-text">
@@ -13,14 +13,16 @@
                         consequat nisl vel tincidunt praesent semper feugiat.
                     </p>
                     <div class="payment-icons">
-                        <img src="@/assets/images/vector.svg" alt="Visa" class="payment-icon" />
-                        <img src="@/assets/images/vector2.svg" alt="Mastercard" class="payment-icon" />
-                        <img src="@/assets/images/vector3.svg" alt="Amex" class="payment-icon" />
-                        <img src="@/assets/images/vector4.svg" alt="Paypal" class="payment-icon" />
-                        <img src="@/assets/images/vector5.svg" alt="Diners" class="payment-icon" />
-                        <img src="@/assets/images/vector6.svg" alt="Discover" class="payment-icon" />
+                        <img src="@/assets/images/home/vector.svg" alt="Visa" class="payment-icon" />
+                        <img src="@/assets/images/home/vector2.svg" alt="Mastercard" class="payment-icon" />
+                        <img src="@/assets/images/home/vector3.svg" alt="Amex" class="payment-icon" />
+                        <img src="@/assets/images/home/vector4.svg" alt="Paypal" class="payment-icon" />
+                        <img src="@/assets/images/home/vector5.svg" alt="Diners" class="payment-icon" />
+                        <img src="@/assets/images/home/vector6.svg" alt="Discover" class="payment-icon" />
                     </div>
                 </v-col>
+
+                <v-col cols="12" md="1"></v-col>
 
                 <!-- Cột 2: Information -->
                 <v-col cols="12" sm="6" md="2">
@@ -97,7 +99,7 @@
                 </v-col>
 
                 <!-- Cột 4: Connect With Us -->
-                <v-col cols="12" sm="6" md="3">
+                <v-col cols="12" sm="6" md="2">
                     <h4 class="footer-title">CONNECT WITH US</h4>
                     <v-list dense class="footer-list">
                         <v-list-item class="footer-link">
@@ -134,7 +136,7 @@
                 </v-col>
 
                 <!-- Cột 5: Help -->
-                <v-col cols="12" sm="6" md="1">
+                <v-col cols="12" sm="6" md="2">
                     <h4 class="footer-title">HELP</h4>
                     <v-list dense class="footer-list">
                         <v-list-item class="footer-link">
@@ -172,7 +174,7 @@
             </v-row>
 
             <!-- Phần bottom footer -->
-            <v-divider class="my-4" color="rgba(255,255,255,0.2)"></v-divider>
+            <v-divider class="my-4" color="rgba(255,255,255,1)"></v-divider>
             <v-row>
                 <v-col cols="12" md="6">
                     <div class="footer-bottom-links">
@@ -200,6 +202,13 @@ export default {
     background-color: #565E41 !important;
     color: white;
     padding: 40px 0 20px 0;
+}
+
+.custom-container {
+    max-width: calc(100% - 70px) !important;
+    /* Lề 70px mỗi bên */
+    padding-left: 70px !important;
+    padding-right: 70px !important;
 }
 
 .logo-text {
@@ -288,6 +297,12 @@ export default {
 
 /* Responsive */
 @media (max-width: 960px) {
+    .custom-container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        max-width: calc(100% - 40px) !important;
+    }
+
     .footer-bottom-links {
         flex-direction: column;
         gap: 8px;
@@ -296,6 +311,14 @@ export default {
     .text-md-right {
         text-align: left !important;
         margin-top: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .custom-container {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        max-width: calc(100% - 32px) !important;
     }
 }
 </style>

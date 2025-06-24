@@ -1,5 +1,5 @@
 <template>
-    <section class="media-content py-12 bg-grey-lighten-5">
+    <section class="feature-service py-12 bg-grey-lighten-5">
         <v-container fluid class="px-6">
             <!-- Splide Carousel -->
             <Splide :options="{
@@ -49,41 +49,41 @@ const hoveredProductId = ref<number | null>(null)
 const products = ref<Product[]>([
     {
         id: 1,
-        image: new URL('@/assets/images/vector8.svg', import.meta.url).href
+        image: new URL('@/assets/images/home/vector8.svg', import.meta.url).href
     },
     {
         id: 2,
-        image: new URL('@/assets/images/vector9.svg', import.meta.url).href
+        image: new URL('@/assets/images/home/vector9.svg', import.meta.url).href
     },
     {
         id: 3,
-        image: new URL('@/assets/images/vector10.svg', import.meta.url).href
+        image: new URL('@/assets/images/home/vector10.svg', import.meta.url).href
     },
     {
         id: 4,
-        image: new URL('@/assets/images/vector11.svg', import.meta.url).href
+        image: new URL('@/assets/images/home/vector11.svg', import.meta.url).href
     },
     {
         id: 5,
-        image: new URL('@/assets/images/vector8.svg', import.meta.url).href
+        image: new URL('@/assets/images/home/vector8.svg', import.meta.url).href
     },
     {
         id: 6,
-        image: new URL('@/assets/images/vector9.svg', import.meta.url).href
+        image: new URL('@/assets/images/home/vector9.svg', import.meta.url).href
     },
     {
         id: 7,
-        image: new URL('@/assets/images/vector10.svg', import.meta.url).href
+        image: new URL('@/assets/images/home/vector10.svg', import.meta.url).href
     },
     {
         id: 8,
-        image: new URL('@/assets/images/vector11.svg', import.meta.url).href
+        image: new URL('@/assets/images/home/vector11.svg', import.meta.url).href
     }
 ])
 </script>
 
 <style scoped>
-.media-content {
+.feature-service {
     background: linear-gradient(135deg, rgba(248, 248, 248, 0) 0%, rgba(240, 240, 240, 0) 100%);
     overflow: hidden;
 }

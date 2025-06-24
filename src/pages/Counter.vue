@@ -26,6 +26,6 @@ const count = ref(0)
 <style scoped>
 .text-center {
     text-align: center;
-    padding-top: 118px;
+    padding-top: 140px;
 }
 </style>

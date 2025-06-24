@@ -57,19 +57,19 @@ const products = ref<Product[]>([
     {
         id: 1,
         name: 'Western Collection',
-        image: new URL('@/assets/images/grid01_207f76bf-46ab-4eeb-900d-ea0f0c3181f5.webp', import.meta.url).href,
+        image: new URL('@/assets/images/home/grid01_207f76bf-46ab-4eeb-900d-ea0f0c3181f5.webp', import.meta.url).href,
         description: 'Ante in nibh mauris cursus mattis molestie a'
     },
     {
         id: 2,
         name: 'Classic Collection',
-        image: new URL('@/assets/images/grid02_10c0b21e-9406-455c-beaa-b70f0902e568.webp', import.meta.url).href,
+        image: new URL('@/assets/images/home/grid02_10c0b21e-9406-455c-beaa-b70f0902e568.webp', import.meta.url).href,
         description: 'Mattis molestie a iaculis at erat pellentesquet'
     },
     {
         id: 3,
         name: 'Elegant Collection',
-        image: new URL('@/assets/images/grid03_a8be2ec1-d176-42be-9c2b-49a2ac9973b5.webp', import.meta.url).href,
+        image: new URL('@/assets/images/home/grid03_a8be2ec1-d176-42be-9c2b-49a2ac9973b5.webp', import.meta.url).href,
         description: 'Enim sit amet venenatis urna mauris in aliquam sem'
     }
 ])

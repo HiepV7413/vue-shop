@@ -11,6 +11,7 @@ declare module 'vue' {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     Demo: typeof import('./components/demo.vueo.vue')['default']
     DiscoverNewStyle: typeof import('./components/DiscoverNewStyle.vue')['default']
+    FeatureService: typeof import('./components/FeatureService.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']

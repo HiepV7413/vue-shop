@@ -11,13 +11,7 @@
                         <RouterLink to="/">Home</RouterLink>
                     </v-list-item>
                     <v-list-item>
-                        <RouterLink to="/Counter">Counter</RouterLink>
-                    </v-list-item>
-                    <v-list-item>
                         <RouterLink to="/demo">Demo</RouterLink>
-                    </v-list-item>
-                    <v-list-item>
-                        <RouterLink to="/Faq">Faq</RouterLink>
                     </v-list-item>
                 </v-list>
             </v-menu>
@@ -76,10 +70,10 @@
                 </template>
                 <v-list>
                     <v-list-item>
-                        <RouterLink to="/pages/mypage1">My Page1</RouterLink>
+                        <RouterLink to="/Counter">Counter</RouterLink>
                     </v-list-item>
                     <v-list-item>
-                        <RouterLink to="/pages/mypage2">My Page2</RouterLink>
+                        <RouterLink to="/Faq">Faq</RouterLink>
                     </v-list-item>
                 </v-list>
             </v-menu>

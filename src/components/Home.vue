@@ -11,7 +11,7 @@
 
         <discover-new-style />
 
-        <media-content />
+        <feature-services />
 
         <season-outfit />
 
@@ -25,9 +25,9 @@ import KnowUsSection from '@/components/KnowUsSection.vue'
 import SpecialProducts from '@/components/SpecialProducts.vue'
 import UniqueDesign from '@/components/UniqueDesign.vue'
 import DiscoverNewStyle from '@/components/DiscoverNewStyle.vue'
-import MediaContent from '@/components/MediaContent.vue'
 import SeasonOutfit from '@/components/SeasonOutfit.vue'
 import Instagram from '@/components/Instagram.vue'
+import FeatureServices from '@/components/FeatureService.vue'
 </script>
 
 <style lang="scss" scoped>

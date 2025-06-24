@@ -41,7 +41,7 @@ function onSeasonCta() {
     // Parallax effect
     &.parallax {
         /* The image used */
-        background-image: url("@/assets/images/fixed-bg-filler.jpg");
+        background-image: url("@/assets/images/home/fixed-bg-filler.jpg");
 
         /* Set a specific height */
         min-height: 750px;
@@ -138,7 +138,7 @@ function onSeasonCta() {
 
 // Alternative parallax styles nếu bạn muốn thử các hiệu ứng khác
 .parallax-alternative {
-    background-image: url("@/assets/images/fixed-bg-filler.jpg");
+    background-image: url("@/assets/images/home/fixed-bg-filler.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
