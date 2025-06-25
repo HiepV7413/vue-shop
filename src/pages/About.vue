@@ -3,7 +3,6 @@
         <h3 class="text-center text-h4 font-weight-bold mb-6">
             ABOUT
         </h3>
-
         <!-- Breadcrumb -->
         <div class="d-flex justify-center mb-8">
             <v-breadcrumbs :items="breadcrumbs" class="justify-center pa-0">
@@ -18,30 +17,42 @@
             </v-breadcrumbs>
         </div>
 
-        <!-- Video Section -->
-        <div class="video-wrapper">
-            <video autoplay muted loop playsinline>
-                <source src="@/assets/videos/About -Trendz.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-        </div>
+        <!-- Sections -->
+        <VideoSection />
+
+        <InfoPassionateAbout />
+
+        <AboutCollectionLeft />
+
+        <AboutFirstHalf />
+
+        <AboutCollectionRight />
+
     </v-container>
 </template>
 
 <script setup lang="ts">
+import VideoSection from './AboutSection/VideoSection.vue'
+import InfoPassionateAbout from './AboutSection/InfoPassionateAbout.vue'
+import AboutCollectionLeft from './AboutSection/AboutCollectionLeft.vue'
+import AboutFirstHalf from './AboutSection/AboutFirstHalf.vue'
+import AboutCollectionRight from './AboutSection/AboutCollectionRight.vue'
+
 const breadcrumbs = [
     { title: 'Home', disabled: false, href: '/' },
-    { title: 'Faq', disabled: true }
-];
+    { title: 'About', disabled: true }
+]
 </script>
+
 <style scoped>
 .about {
-    text-align: center;
     padding-top: 140px;
     padding-bottom: 100px;
-    max-width: 900px;
+    max-width: 1700px;
+    margin: 0 auto;
 }
 
+/* Breadcrumb styling */
 .breadcrumb-item {
     color: #666;
     font-size: 14px;
@@ -49,18 +60,5 @@ const breadcrumbs = [
 
 .breadcrumb-item:not(.v-breadcrumbs-item--disabled) {
     color: #8b7355;
-}
-
-.video-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 24px;
-}
-
-.video-wrapper video {
-    max-width: 100%;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
 }
 </style>
