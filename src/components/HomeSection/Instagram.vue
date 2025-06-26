@@ -67,7 +67,7 @@ const products = ref<Product[]>([
     { id: 6, image: new URL('@/assets/images/home/Home-3-insta-6.webp', import.meta.url).href },
 ]);
 const instagramLogo = new URL(
-    '@/assets/images/instagram-svgrepo-com.svg',
+    '@/assets/images/home/instagram-svgrepo-com.svg',
     import.meta.url
 ).href;
 </script>

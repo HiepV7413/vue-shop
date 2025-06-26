@@ -1,5 +1,5 @@
 <template>
-    <v-container class="about">
+    <v-container>
         <div class="about-collection-right">
             <div class="collection-content">
                 <p class="section-subtitle">Excellent & Unbeatable</p>
@@ -19,7 +19,7 @@
                         <span>Shop new arrival</span>
                         <div class="ml-1" style="margin-left: 5px;">
                             <div class="position-relative btn-right d-flex align-center px-1 cursor-pointer">
-                                <img class="btn-right-icon" src="@/assets/images/home/vector15.svg" alt="Next"
+                                <img class="btn-right-icon" src="@/assets/images/about/vector10.svg" alt="Next"
                                     width="25" height="25" />
                                 <div class="overlay"></div>
                             </div>
@@ -72,18 +72,11 @@
     }
 }
 
-.about {
-    padding-bottom: 80px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .about-collection-right {
     display: flex;
     align-items: center;
     gap: 4rem;
-    margin-top: 6rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 
 .collection-image {

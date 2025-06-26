@@ -15,8 +15,8 @@
 <style scoped>
 .video-only {
     text-align: center;
-    padding-top: 140px;
-    padding-bottom: 100px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     max-width: 1500px;
     margin: 0 auto;
 }

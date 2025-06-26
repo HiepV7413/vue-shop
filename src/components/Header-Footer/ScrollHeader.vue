@@ -1,20 +1,9 @@
 <template>
-    <div class="header-fixed">
-        <MarqueeNotification class="topbar" />
-        <v-app-bar :elevation="2" class="navbar">
-            <v-menu offset-y open-on-hover>
-                <template #activator="{ props }">
-                    <v-btn v-bind="props" text>Home</v-btn>
-                </template>
-                <v-list>
-                    <v-list-item>
-                        <RouterLink to="/">Home</RouterLink>
-                    </v-list-item>
-                    <v-list-item>
-                        <RouterLink to="/demo">Demo</RouterLink>
-                    </v-list-item>
-                </v-list>
-            </v-menu>
+    <div class="scroll-header">
+        <v-app-bar :elevation="0" class="navbar transparent-navbar">
+            <RouterLink to="/" style="text-decoration: none;">
+                <v-btn text color="black">Home</v-btn>
+            </RouterLink>
             <span>|</span>
             <v-menu offset-y open-on-hover>
                 <template #activator="{ props }">
@@ -33,22 +22,9 @@
                 </v-list>
             </v-menu>
             <span>|</span>
-            <v-menu offset-y open-on-hover>
-                <template #activator="{ props }">
-                    <v-btn v-bind="props" text>About</v-btn>
-                </template>
-                <v-list>
-                    <v-list-item>
-                        <RouterLink to="/about">About</RouterLink>
-                    </v-list-item>
-                    <v-list-item>
-                        <RouterLink to="/about/history">We History</RouterLink>
-                    </v-list-item>
-                    <v-list-item>
-                        <RouterLink to="/about/culture">Our Culture</RouterLink>
-                    </v-list-item>
-                </v-list>
-            </v-menu>
+            <RouterLink to="/about" style="text-decoration: none;">
+                <v-btn text color="black">About</v-btn>
+            </RouterLink>
             <span>|</span>
             <v-menu offset-y open-on-hover>
                 <template #activator="{ props }">
@@ -75,10 +51,13 @@
                     <v-list-item>
                         <RouterLink to="/Faq">Faq</RouterLink>
                     </v-list-item>
+                    <v-list-item>
+                        <RouterLink to="/demo">Demo</RouterLink>
+                    </v-list-item>
                 </v-list>
             </v-menu>
             <VSpacer></VSpacer>
-            <h2>My Shop</h2>
+            <h2 class="logo-text">My Shop</h2>
             <VSpacer></VSpacer>
             <v-select v-model="selectedCurrency" :items="currencies" dense hide-details solo-inverted
                 style="max-width: 120px" />
@@ -96,7 +75,6 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import MarqueeNotification from "@/components/MarqueeNotification.vue";
 
 const currencies = [
     "USD, $",
@@ -114,7 +92,7 @@ const selectedCurrency = ref(currencies[0]);
 </script>
 
 <style lang="scss" scoped>
-.header-fixed {
+.scroll-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -132,7 +110,7 @@ const selectedCurrency = ref(currencies[0]);
 }
 
 .transparent-navbar {
-    background: rgba(255, 255, 255, 0.4) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
 }
 
 .v-btn {

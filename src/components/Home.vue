@@ -20,14 +20,14 @@
 </template>
 
 <script setup lang="ts">
-import Herosection from '@/components/HeroSection.vue'
-import KnowUsSection from '@/components/KnowUsSection.vue'
-import SpecialProducts from '@/components/SpecialProducts.vue'
-import UniqueDesign from '@/components/UniqueDesign.vue'
-import DiscoverNewStyle from '@/components/DiscoverNewStyle.vue'
-import SeasonOutfit from '@/components/SeasonOutfit.vue'
-import Instagram from '@/components/Instagram.vue'
-import FeatureServices from '@/components/FeatureService.vue'
+import Herosection from '@/components/HomeSection/HeroSection.vue'
+import KnowUsSection from '@/components/HomeSection/KnowUsSection.vue'
+import SpecialProducts from '@/components/HomeSection/SpecialProducts.vue'
+import UniqueDesign from '@/components/HomeSection/UniqueDesign.vue'
+import DiscoverNewStyle from '@/components/HomeSection/DiscoverNewStyle.vue'
+import SeasonOutfit from '@/components/HomeSection/SeasonOutfit.vue'
+import Instagram from '@/components/HomeSection/Instagram.vue'
+import FeatureServices from '@/components/HomeSection/FeatureService.vue'
 </script>
 
 <style lang="scss" scoped>

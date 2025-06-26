@@ -320,6 +320,7 @@ const filteredProducts = computed(() =>
 .splide__arrow {
     position: absolute;
     pointer-events: auto;
+    background: none;
 }
 
 .splide__arrow--prev {

@@ -1,6 +1,6 @@
 <template>
-    <v-container class="about animated-component">
-        <div class="about-first-half">
+    <v-container>
+        <div class="about-first-half animated-component">
             <div class="collection-image">
                 <img src="@/assets/images/about/about-first-half.webp" alt="About Collection">
             </div>
@@ -85,8 +85,8 @@ function onKnowUsCta() {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100vh;
-    width: 1100px;
+    height: 79.5vh;
+    width: 800px;
     background: linear-gradient(180deg, #E8E0DD);
     animation: growLine 3s ease-in-out infinite;
     z-index: -1;
@@ -106,29 +106,23 @@ function onKnowUsCta() {
 
 @keyframes growLine {
     0% {
-        width: 1100px;
+        width: 800px;
     }
 
     50% {
-        width: 1500px;
+        width: 1000px;
     }
 
     100% {
-        width: 1100px;
+        width: 800px;
     }
-}
-
-.about {
-    padding-bottom: 80px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .about-first-half {
     display: flex;
     align-items: center;
     gap: 4rem;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
 }
 
 .collection-image {

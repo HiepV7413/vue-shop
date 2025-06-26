@@ -13,8 +13,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
-import Header from "@/components/Header.vue";
-import ScrollHeader from "@/components/ScrollHeader.vue";
+import Header from "@/components/Header-Footer/Header.vue";
+import ScrollHeader from "@/components/Header-Footer/ScrollHeader.vue";
 
 const showScrollHeader = ref(false);
 

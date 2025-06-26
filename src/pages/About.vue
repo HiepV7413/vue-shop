@@ -28,6 +28,8 @@
 
         <AboutCollectionRight />
 
+        <Team />
+
     </v-container>
 </template>
 
@@ -37,6 +39,7 @@ import InfoPassionateAbout from './AboutSection/InfoPassionateAbout.vue'
 import AboutCollectionLeft from './AboutSection/AboutCollectionLeft.vue'
 import AboutFirstHalf from './AboutSection/AboutFirstHalf.vue'
 import AboutCollectionRight from './AboutSection/AboutCollectionRight.vue'
+import Team from './AboutSection/Team.vue'
 
 const breadcrumbs = [
     { title: 'Home', disabled: false, href: '/' },
