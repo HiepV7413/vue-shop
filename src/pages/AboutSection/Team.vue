@@ -61,25 +61,25 @@ const teamMembers = ref<TeamMember[]>([
     {
         name: 'Camden',
         role: 'Customer support',
-        image: '/src/assets/images/about/team-1-1.webp',
+        image: new URL('/src/assets/images/about/team-1-1.webp', import.meta.url).href,
         alt: 'Camden - Customer Support'
     },
     {
         name: 'Audrey',
         role: 'CEO',
-        image: '/src/assets/images/about/team-2-1.webp',
+        image: new URL('/src/assets/images/about/team-2-1.webp', import.meta.url).href,
         alt: 'Audrey - CEO'
     },
     {
         name: 'Emmett',
         role: 'MD',
-        image: '/src/assets/images/about/team-3-1.webp',
+        image: new URL('/src/assets/images/about/team-3-1.webp', import.meta.url).href,
         alt: 'Emmett - MD'
     },
     {
         name: 'Yvonne',
         role: 'Quality manager',
-        image: '/src/assets/images/about/team-4-1.webp',
+        image: new URL('/src/assets/images/about/team-4-1.webp', import.meta.url).href,
         alt: 'Yvonne - Quality Manager'
     }
 ])
