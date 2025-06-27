@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="reduced-container">
         <div class="about-collection-right">
             <div class="collection-content">
                 <p class="section-subtitle">Excellent & Unbeatable</p>
@@ -37,6 +37,12 @@
 // No logic needed
 </script>
 <style scoped>
+.reduced-container {
+    padding-left: 75px !important;
+    padding-right: 75px !important;
+    max-width: none !important;
+}
+
 .animated-title {
     position: relative;
     color: #333;
@@ -75,7 +81,7 @@
 .about-collection-right {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 155px;
     margin-bottom: 1rem;
 }
 
@@ -95,7 +101,7 @@
     flex: 1;
     max-width: 50%;
     text-align: left;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 .section-subtitle {
@@ -153,10 +159,15 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .reduced-container {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
     .about-collection-right {
         flex-direction: column-reverse;
-        gap: 2rem;
-        margin-top: 4rem;
+        gap: 1rem;
+        margin-top: 2rem;
     }
 
     .collection-image,

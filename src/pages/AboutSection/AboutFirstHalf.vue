@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="reduced-container">
         <div class="about-first-half animated-component">
             <div class="collection-image">
                 <img src="@/assets/images/about/about-first-half.webp" alt="About Collection">
@@ -39,6 +39,12 @@ function onKnowUsCta() {
 }
 </script>
 <style scoped>
+.reduced-container {
+    padding-left: 111px !important;
+    padding-right: 111px !important;
+    max-width: none !important;
+}
+
 .animated-title {
     position: relative;
     color: #333;
@@ -83,10 +89,10 @@ function onKnowUsCta() {
 .animated-component::after {
     content: '';
     position: absolute;
-    top: 0;
+    top: -100px;
     right: 0;
-    height: 79.5vh;
-    width: 800px;
+    height: 95.5vh;
+    width: 1200px;
     background: linear-gradient(180deg, #E8E0DD);
     animation: growLine 3s ease-in-out infinite;
     z-index: -1;
@@ -106,15 +112,15 @@ function onKnowUsCta() {
 
 @keyframes growLine {
     0% {
-        width: 800px;
+        width: 1200px;
     }
 
     50% {
-        width: 1000px;
+        width: 1400px;
     }
 
     100% {
-        width: 800px;
+        width: 1200px;
     }
 }
 
@@ -122,7 +128,7 @@ function onKnowUsCta() {
     display: flex;
     align-items: center;
     gap: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
 }
 
 .collection-image {
@@ -142,7 +148,7 @@ function onKnowUsCta() {
     flex: 1;
     max-width: 50%;
     text-align: left;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 .section-subtitle {
@@ -164,10 +170,15 @@ function onKnowUsCta() {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .reduced-container {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
     .about-first-half {
         flex-direction: column;
-        gap: 2rem;
-        margin-top: 4rem;
+        gap: 1rem;
+        margin-top: 2rem;
     }
 
     .collection-image,

@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container class="reduced-container">
         <div class="about-collection-left">
             <div class="collection-image">
                 <img src="@/assets/images/about/about-collection-left.webp" alt="About Collection">
@@ -37,6 +37,13 @@
 // No logic needed
 </script>
 <style scoped>
+/* Giảm padding của container */
+.reduced-container {
+    padding-left: 75px !important;
+    padding-right: 75px !important;
+    max-width: none !important;
+}
+
 .animated-title {
     position: relative;
     color: #333;
@@ -75,8 +82,11 @@
 .about-collection-left {
     display: flex;
     align-items: center;
-    gap: 4rem;
-    margin-bottom: 4rem;
+    gap: 155px;
+    /* Cách nhau 155px */
+    margin-bottom: 9rem;
+    /* Giảm margin-bottom từ 4rem xuống 2rem */
+    margin-top: 3rem;
 }
 
 .collection-image {
@@ -95,7 +105,8 @@
     flex: 1;
     max-width: 50%;
     text-align: left;
-    padding-left: 2rem;
+    padding-left: 1rem;
+    /* Giảm padding-left từ 2rem xuống 1rem */
 }
 
 .section-subtitle {
@@ -153,10 +164,17 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .reduced-container {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
     .about-collection-left {
         flex-direction: column;
-        gap: 2rem;
-        margin-top: 4rem;
+        gap: 1rem;
+        /* Giảm gap trên mobile từ 2rem xuống 1rem */
+        margin-top: 2rem;
+        /* Giảm margin-top từ 4rem xuống 2rem */
     }
 
     .collection-image,

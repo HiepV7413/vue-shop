@@ -51,7 +51,7 @@ const breadcrumbs = [
 .about {
     padding-top: 140px;
     padding-bottom: 100px;
-    max-width: 1700px;
+    max-width: 2000px;
     margin: 0 auto;
 }
 
