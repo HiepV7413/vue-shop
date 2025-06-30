@@ -3,6 +3,10 @@
         <div class="about-first-half animated-component">
             <div class="collection-image">
                 <img src="@/assets/images/about/about-first-half.webp" alt="About Collection">
+                <!-- Floating Image -->
+                <div class="floating-image">
+                    <img src="@/assets/images/about/about-first-half2.webp" alt="Floating Element">
+                </div>
             </div>
             <div class="collection-content">
                 <p class="section-subtitle">ABOUT US</p>
@@ -32,12 +36,14 @@
         </div>
     </v-container>
 </template>
+
 <script setup lang="ts">
 function onKnowUsCta() {
     console.log('Know Us CTA clicked')
     // TODO: điều hướng tới trang shop hoặc collection nếu cần
 }
 </script>
+
 <style scoped>
 .reduced-container {
     padding-left: 111px !important;
@@ -134,6 +140,8 @@ function onKnowUsCta() {
 .collection-image {
     flex: 1;
     max-width: 50%;
+    position: relative;
+    /* Thêm để floating image có thể định vị */
 }
 
 .collection-image img {
@@ -142,6 +150,35 @@ function onKnowUsCta() {
     height: 780px;
     border-radius: 8px;
     object-fit: contain;
+}
+
+/* Floating Image Styles */
+.floating-image {
+    position: absolute;
+    top: 550px;
+    right: 50px;
+    z-index: 10;
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.floating-image img {
+    width: 300px;
+    height: 330px;
+    object-fit: cover;
+}
+
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .collection-content {
@@ -198,6 +235,17 @@ function onKnowUsCta() {
 
     .section-title h2 {
         font-size: 2rem !important;
+    }
+
+    /* Floating image responsive */
+    .floating-image {
+        top: -10px;
+        right: -15px;
+    }
+
+    .floating-image img {
+        width: 300px;
+        height: 320px;
     }
 }
 </style>
