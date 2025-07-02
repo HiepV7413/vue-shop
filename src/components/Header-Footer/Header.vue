@@ -58,6 +58,9 @@
                     <v-list-item>
                         <RouterLink to="/Pages/404Pages">404</RouterLink>
                     </v-list-item>
+                    <v-list-item>
+                        <RouterLink to="/Pages/Contact">Contact</RouterLink>
+                    </v-list-item>
                 </v-list>
             </v-menu>
             <VSpacer></VSpacer>
