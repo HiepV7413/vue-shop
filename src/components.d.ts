@@ -9,7 +9,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
-    Demo: typeof import('./components/demo.vueo.vue')['default']
     DiscoverNewStyle: typeof import('./components/HomeSection/DiscoverNewStyle.vue')['default']
     FeatureService: typeof import('./components/HomeSection/FeatureService.vue')['default']
     Footer: typeof import('./components/Header-Footer/Footer.vue')['default']
@@ -20,8 +19,6 @@ declare module 'vue' {
     Instagram: typeof import('./components/HomeSection/Instagram.vue')['default']
     KnowUsSection: typeof import('./components/HomeSection/KnowUsSection.vue')['default']
     MarqueeNotification: typeof import('./components/Header-Footer/MarqueeNotification.vue')['default']
-    MediaContent: typeof import('./components/MediaContent.vue')['default']
-    Notification: typeof import('./components/Notification.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollHeader: typeof import('./components/Header-Footer/ScrollHeader.vue')['default']

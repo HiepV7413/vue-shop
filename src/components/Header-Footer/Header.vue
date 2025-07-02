@@ -47,13 +47,16 @@
                 </template>
                 <v-list>
                     <v-list-item>
-                        <RouterLink to="/Counter">Counter</RouterLink>
+                        <RouterLink to="/Demo/Counter">Counter</RouterLink>
                     </v-list-item>
                     <v-list-item>
-                        <RouterLink to="/Faq">Faq</RouterLink>
+                        <RouterLink to="/Pages/Faq">Faq</RouterLink>
                     </v-list-item>
                     <v-list-item>
-                        <RouterLink to="/demo">Demo</RouterLink>
+                        <RouterLink to="/Demo/demo">Demo</RouterLink>
+                    </v-list-item>
+                    <v-list-item>
+                        <RouterLink to="/Pages/404Pages">404</RouterLink>
                     </v-list-item>
                 </v-list>
             </v-menu>
