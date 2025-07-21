@@ -33,4 +33,18 @@ router.isReady().then(() => {
   localStorage.removeItem('vuetify:dynamic-reload')
 })
 
+// Navigation Guard: Bảo vệ trang chủ
+router.beforeEach((to, from, next) => {
+  const isAuthenticated = !!localStorage.getItem('token');
+  // Nếu chưa đăng nhập và không phải trang Login thì chuyển về Login
+  if (!isAuthenticated && to.path !== '/Login/Login') {
+    next('/Login/Login');
+  } else if (isAuthenticated && to.path === '/Login/Login') {
+    // Nếu đã đăng nhập mà vào trang Login thì chuyển về /
+    next('/');
+  } else {
+    next();
+  }
+});
+
 export default router

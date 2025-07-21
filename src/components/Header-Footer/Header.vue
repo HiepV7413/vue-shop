@@ -76,13 +76,40 @@
             <v-btn>
                 <v-icon>mdi-cart-outline</v-icon>
             </v-btn>
+            <v-btn
+                v-if="isAuthenticated"
+                icon
+                color="error"
+                @click="logout"
+                style="margin-left: 8px; font-size: 18px;"
+                title="Đăng xuất"
+            >
+                <v-icon size="22">mdi-logout</v-icon>
+            </v-btn>
+            <RouterLink v-else to="/Login/Login" style="text-decoration: none;">
+                <v-btn
+                    icon
+                    color="primary"
+                    style="margin-left: 8px; font-size: 18px;"
+                    title="Đăng nhập"
+                >
+                    <v-icon size="22">mdi-login</v-icon>
+                </v-btn>
+            </RouterLink>
         </v-app-bar>
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { useAuthStore } from "@/stores/auth";
+import { computed } from "vue";
 import MarqueeNotification from "@/components/Header-Footer/MarqueeNotification.vue";
+
+const router = useRouter();
+const auth = useAuthStore();
+
+const isAuthenticated = computed(() => auth.isAuthenticated());
 
 const currencies = [
     "USD, $",
@@ -97,6 +124,11 @@ const currencies = [
     "KRW, ₩",
 ];
 const selectedCurrency = ref(currencies[0]);
+
+async function logout() {
+    await auth.logout();
+    router.push("/Login/Login");
+}
 </script>
 
 <style lang="scss" scoped>
