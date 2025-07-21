@@ -28,6 +28,7 @@ import DiscoverNewStyle from '@/components/HomeSection/DiscoverNewStyle.vue'
 import SeasonOutfit from '@/components/HomeSection/SeasonOutfit.vue'
 import Instagram from '@/components/HomeSection/Instagram.vue'
 import FeatureServices from '@/components/HomeSection/FeatureService.vue'
+
 </script>
 
 <style lang="scss" scoped>

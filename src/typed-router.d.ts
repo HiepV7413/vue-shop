@@ -19,6 +19,7 @@ declare module 'vue-router/auto-routes' {
    */
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
+    '/404Pages': RouteRecordInfo<'/404Pages', '/404Pages', Record<never, never>, Record<never, never>>,
     '/About': RouteRecordInfo<'/About', '/About', Record<never, never>, Record<never, never>>,
     '/AboutSection/AboutCollectionLeft': RouteRecordInfo<'/AboutSection/AboutCollectionLeft', '/AboutSection/AboutCollectionLeft', Record<never, never>, Record<never, never>>,
     '/AboutSection/AboutCollectionRight': RouteRecordInfo<'/AboutSection/AboutCollectionRight', '/AboutSection/AboutCollectionRight', Record<never, never>, Record<never, never>>,
@@ -26,12 +27,11 @@ declare module 'vue-router/auto-routes' {
     '/AboutSection/InfoPassionateAbout': RouteRecordInfo<'/AboutSection/InfoPassionateAbout', '/AboutSection/InfoPassionateAbout', Record<never, never>, Record<never, never>>,
     '/AboutSection/Team': RouteRecordInfo<'/AboutSection/Team', '/AboutSection/Team', Record<never, never>, Record<never, never>>,
     '/AboutSection/VideoSection': RouteRecordInfo<'/AboutSection/VideoSection', '/AboutSection/VideoSection', Record<never, never>, Record<never, never>>,
+    '/Contact': RouteRecordInfo<'/Contact', '/Contact', Record<never, never>, Record<never, never>>,
+    '/ContactSections/Map': RouteRecordInfo<'/ContactSections/Map', '/ContactSections/Map', Record<never, never>, Record<never, never>>,
     '/Demo/Counter': RouteRecordInfo<'/Demo/Counter', '/Demo/Counter', Record<never, never>, Record<never, never>>,
     '/Demo/demo': RouteRecordInfo<'/Demo/demo', '/Demo/demo', Record<never, never>, Record<never, never>>,
-    '/Login/Login': RouteRecordInfo<'/Login/Login', '/Login/Login', Record<never, never>, Record<never, never>>,
-    '/Pages/404Pages': RouteRecordInfo<'/Pages/404Pages', '/Pages/404Pages', Record<never, never>, Record<never, never>>,
-    '/Pages/Contact': RouteRecordInfo<'/Pages/Contact', '/Pages/Contact', Record<never, never>, Record<never, never>>,
-    '/Pages/ContactSections/Map': RouteRecordInfo<'/Pages/ContactSections/Map', '/Pages/ContactSections/Map', Record<never, never>, Record<never, never>>,
-    '/Pages/Faq': RouteRecordInfo<'/Pages/Faq', '/Pages/Faq', Record<never, never>, Record<never, never>>,
+    '/Faq': RouteRecordInfo<'/Faq', '/Faq', Record<never, never>, Record<never, never>>,
+    '/Login': RouteRecordInfo<'/Login', '/Login', Record<never, never>, Record<never, never>>,
   }
 }
