@@ -37,9 +37,9 @@ router.isReady().then(() => {
 router.beforeEach((to, from, next) => {
   const isAuthenticated = !!localStorage.getItem('token');
   // Nếu chưa đăng nhập và không phải trang Login thì chuyển về Login
-  if (!isAuthenticated && to.path !== '/Login/Login') {
-    next('/Login/Login');
-  } else if (isAuthenticated && to.path === '/Login/Login') {
+  if (!isAuthenticated && to.path !== '/login') {
+    next('/login');
+  } else if (isAuthenticated && to.path === '/login') {
     // Nếu đã đăng nhập mà vào trang Login thì chuyển về /
     next('/');
   } else {
