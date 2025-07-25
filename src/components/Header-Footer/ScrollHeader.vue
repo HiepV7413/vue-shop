@@ -49,16 +49,16 @@
                         <RouterLink to="/Demo/Counter">Counter</RouterLink>
                     </v-list-item>
                     <v-list-item>
-                        <RouterLink to="/Pages/Faq">Faq</RouterLink>
+                        <RouterLink to="/Faq">Faq</RouterLink>
                     </v-list-item>
                     <v-list-item>
                         <RouterLink to="/Demo/demo">Demo</RouterLink>
                     </v-list-item>
                     <v-list-item>
-                        <RouterLink to="/Pages/404Pages">404</RouterLink>
+                        <RouterLink to="/404Pages">404</RouterLink>
                     </v-list-item>
                     <v-list-item>
-                        <RouterLink to="/Pages/Contact">Contact</RouterLink>
+                        <RouterLink to="/Contact">Contact</RouterLink>
                     </v-list-item>
                 </v-list>
             </v-menu>
