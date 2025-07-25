@@ -17,16 +17,24 @@
             </v-breadcrumbs>
         </div>
 
-        <!-- Sections -->
+        <Map />
+
+        <ContactSection />
 
     </v-container>
 </template>
+
 <script lang="ts" setup>
+import Map from './ContactSections/Map.vue';
+import ContactSection from './ContactSections/ContactSection.vue';
+
 const breadcrumbs = [
     { title: 'Home', disabled: false, href: '/' },
     { title: 'Contact', disabled: true }
 ]
+
 </script>
+
 <style scoped>
 .contact {
     padding-top: 140px;
