@@ -132,7 +132,16 @@
                 </v-list>
             </v-menu>
             <VSpacer></VSpacer>
-            <h2>My Shop</h2>
+            
+            <!-- Logo Image -->
+            <RouterLink to="/" class="logo-container">
+                <img 
+                    src="https://wdttrendz.wpengine.com/wp-content/uploads/2023/02/logo.svg" 
+                    alt="Logo" 
+                    class="logo-image"
+                />
+            </RouterLink>
+            
             <VSpacer></VSpacer>
             <v-select v-model="selectedCurrency" :items="currencies" dense hide-details solo-inverted
                 style="max-width: 120px" />
@@ -237,6 +246,26 @@ async function logout() {
 .v-list-item {
     font-size: 1.1rem !important;
     min-height: 48px !important;
+}
+
+// Logo Styles
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 24px;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 h2,
@@ -379,6 +408,15 @@ h2,
     
     .menu-image {
         display: none;
+    }
+    
+    .logo-image {
+        height: 40px;
+        max-width: 150px;
+    }
+    
+    .logo-container {
+        margin: 0 12px;
     }
 }
 </style>
