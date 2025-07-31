@@ -12,11 +12,32 @@ export const useAuthStore = defineStore('auth', {
     async login(email: string, password: string) {
       this.loading = true
       this.error = ''
+
+      // ==== Đăng nhập tĩnh: kiểm tra email và mật khẩu cố định ====
+      // Bỏ comment 3 dòng dưới để dùng đăng nhập tĩnh
+      
+      const STATIC_EMAIL = 'hiepvu@gmail.com'
+      const STATIC_PASSWORD = 'Abc123789!@#'
+      if (email === STATIC_EMAIL && password === STATIC_PASSWORD) {
+        this.token = 'static-token'
+        localStorage.setItem('token', this.token)
+        this.loading = false
+        return true
+      } else {
+        this.error = 'Sai tài khoản hoặc mật khẩu'
+        this.loading = false
+        return false
+      }
+      
+
+      // ==== Đăng nhập bằng API ====
+      // Bỏ comment đoạn dưới để dùng đăng nhập qua API
+      /*
       try {
         const res = await axios.post(
           'https://api.cyberonegate.com/Authorize/SignIn',
           {
-            reCaptcha: 'test', // hoặc giá trị captcha hợp lệ nếu có
+            reCaptcha: 'test',
             email,
             password,
             rememberMe: true
@@ -39,8 +60,19 @@ export const useAuthStore = defineStore('auth', {
       } finally {
         this.loading = false
       }
+      */
     },
     async logout() {
+      // ==== Logout tĩnh ====
+      // Bỏ comment đoạn dưới để dùng logout tĩnh
+      
+      this.token = ''
+      localStorage.removeItem('token')
+      
+
+      // ==== Logout qua API ====
+      // Bỏ comment đoạn dưới để dùng logout qua API
+      /*
       try {
         await axios.get('https://api.cyberonegate.com/Authorize/SignOut', {
           headers: { Authorization: `Bearer ${this.token}` }
@@ -48,6 +80,7 @@ export const useAuthStore = defineStore('auth', {
       } catch {}
       this.token = ''
       localStorage.removeItem('token')
+      */
     },
     isAuthenticated() {
       return !!this.token
